@@ -1,0 +1,15 @@
+#/usr/lib/systemd/system
+[Unit]
+Description=sematech
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=sematech
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/root/sematech/script.sh
+
+[Install]
+WantedBy=multi-user.target
